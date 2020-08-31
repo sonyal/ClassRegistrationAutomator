@@ -5,18 +5,19 @@ try:
     br.set_handle_robots(False)
 
     print("1")
-    check = br.open("https://app.testudo.umd.edu/#/main/dropAdd?termId=202008")  # login url
-    check = check.read().decode("utf-8")
+    soc = br.open("https://app.testudo.umd.edu/soc/search?courseId=CMSC420&sectionId=0201&termId=202008&_openSectionsOnly=on&creditCompare=&credits=&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on")
+    
+    if not "<span class=\"open-seats-count\">0</span>" in soc.read().decode("utf-8"):
+        check = br.open("https://app.testudo.umd.edu/#/main/dropAdd?termId=202008")  
 
-    print ("5")
-    if ("Central Authentication Service (CAS)" in check):
-        br.select_form(nr=0)
-        br["j_username"] = user
-        br["j_password"] = pswd
-        br.submit()
-        print(test.read())
-    else:
-        print(check)
+        if ("Central Authentication Service (CAS)" in check.read().decode("utf-8")):
+            br.select_form(nr=0)
+            br["j_username"] = user
+            br["j_password"] = pswd
+            br.submit()
+            print(test.read())
+        else:
+            print(check)
 except:
     print("sdfs")
     # br.find_link(text="Change Password")
