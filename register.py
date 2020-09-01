@@ -17,3 +17,6 @@ if not driver.find_element_by_class_name("open-seats-count").text == 0:
         driver.find_element_by_class_name("form-element form-button").click()
     
     driver.find_element_by_class_name("secondary-button ng-binding ng-scope").click()
+    driver.find_element_by_class_name("drop-add-table-course-input ng-pristine ng-valid ng-valid-maxlength drop-add-table-course-input-margin common-uppercase ng-touched").send_keys("PSYC123")
+    driver.find_element_by_class_name("drop-add-table-section-input ng-pristine ng-valid ng-valid-maxlength common-uppercase ng-touched").send_keys("0201")
+    driver.find_element_by_id("submit_changes").click()
