@@ -12,3 +12,8 @@ if not driver.find_element_by_class_name("open-seats-count").text == 0:
     driver.get("https://app.testudo.umd.edu/#/main/dropAdd?termId=202008")
 
     if "Central Authentication Service (CAS)" in driver.page_source:
+        driver.find_element_by_id("username").send_keys(user)
+        driver.find_element_by_id ("password").send_keys(pswd)
+        driver.find_element_by_class_name("form-element form-button").click()
+    
+    driver.find_element_by_class_name("secondary-button ng-binding ng-scope").click()
