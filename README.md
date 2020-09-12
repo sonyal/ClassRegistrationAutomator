@@ -1,4 +1,4 @@
 # Class Registration Automator
-## The solution to not being able to get a seat in the classes you need
-Checks UMD Schedule of Classes catalog to determine if a desired course has seat openings
-If so, will automatically register the student in the class
+## Guarantee you get registered for the classes you need
+Do you always forget to register for next semester's classes at your alloted time? Or maybe one of your classes has a capped waitlist and is already full. This program is intended to solve those problems. 
+It checks if the class(es) you need has(/have) availability and ensures you get registered
